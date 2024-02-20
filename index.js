@@ -29,7 +29,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Choose a license type from the list.',
-        choices: ['None', 'MIT', 'GNU GPLv3', 'CC0-1.0', 'SIL OpenFont License 1.1', 'GNU AGPLv3', 'GNU GPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'Boost Software License 1.0']
+        choices: ['None', 'License-MIT', 'License-Apache-2.0', 'License-Boost-1.0']
     },
     {
         type: 'input',
@@ -69,6 +69,12 @@ function init() {
     .prompt(questions)
     .then((answers) => {
         console.log(answers);
+        let userData = '';
+        // userData = JSON.stringify(answers);
+        for (const key in answers) {
+            userData += `${key}: ${answers[key]}\n`
+        }
+        return writeToFile(data, generateMarkdown)
         })
 
 };
