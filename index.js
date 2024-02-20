@@ -32,7 +32,24 @@ const questions = [
         choices: ['None', 'MIT', 'GNU GPLv3', 'CC0-1.0', 'SIL OpenFont License 1.1', 'GNU AGPLv3', 'GNU GPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'Boost Software License 1.0']
     },
     {
-        type: 
+        type: 'input',
+        name: 'contributing',
+        message: 'Provide contribution guidelines.'
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Describe test instructions.'
+    },
+    {
+        type: 'input',
+        name: 'username',
+        message: 'What is your GitHub username?'
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email address?'
     }
 
 ];
