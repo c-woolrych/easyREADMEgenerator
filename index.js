@@ -69,13 +69,13 @@ function init() {
     .prompt(questions)
     .then((answers) => {
         console.log(answers);
-        let userData = '';
-        // userData = JSON.stringify(answers);
-        for (const key in answers) {
-            userData += `${key}: ${answers[key]}\n`
-        }
-        return writeToFile(data, generateMarkdown)
+        data = JSON.stringify(answers);
+        return generateMarkdown(data)
+        // return writeToFile(data, generateMarkdown)
         })
+    .then((data) => {
+        return writeToFile(data)
+    })
 
 };
 
